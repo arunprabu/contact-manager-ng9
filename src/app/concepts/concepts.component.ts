@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
     `
   ]
 })
+
+
 export class ConceptsComponent implements OnInit {
   // ts
   // String interpolation related
@@ -19,6 +21,11 @@ export class ConceptsComponent implements OnInit {
   // property binding related
   clientName = 'Citibank';
   isLoggedIn = false;
+
+  // two way binding related
+  courseName = 'Angular';
+
+  myAge = 16;
 
   constructor() { }
 
@@ -29,4 +36,14 @@ export class ConceptsComponent implements OnInit {
     return this.isLoggedIn;
   }
 
+  // event bindin related
+  onBtnClickHandler( e ){
+    console.log(e);
+    alert('clicked');
+  }
+
+  // step 5: custom event binding related handler
+  onProfileLoadedHandler(e){
+    console.log(e);
+  }
 }
