@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { CpbComponent } from './concepts/cpb/cpb.component';
 import { CebComponent } from './concepts/ceb/ceb.component';
 import { ColorizerDirective } from './shared/directives/colorizer.directive';
+import { AddContactComponent } from './contacts/add-contact/add-contact.component';
+import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
 
 // Main Switching Box
 @NgModule({
@@ -26,11 +28,14 @@ import { ColorizerDirective } from './shared/directives/colorizer.directive';
     ContactsComponent,
     CpbComponent,
     CebComponent,
-    ColorizerDirective
+    ColorizerDirective,
+    AddContactComponent,
+    ContactDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
