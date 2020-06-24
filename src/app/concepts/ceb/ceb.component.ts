@@ -17,7 +17,6 @@ export class CebComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
   onLoadProfile(){
     // Step 3: trigger the event
     this.profileLoaded.emit(this.personName);

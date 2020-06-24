@@ -27,6 +27,8 @@ export class ConceptsComponent implements OnInit {
 
   myAge = 16;
 
+  dataFromChild;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -45,5 +47,6 @@ export class ConceptsComponent implements OnInit {
   // step 5: custom event binding related handler
   onProfileLoadedHandler(e){
     console.log(e);
+    this.dataFromChild = e;
   }
 }
