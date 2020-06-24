@@ -80,6 +80,45 @@
     <div class="tab-pane fade" id="directives-tab" role="tabpanel"
       aria-labelledby="directives-tab">
       <h2>Directives</h2>
+
+      <pre>
+        Directives
+        ----
+          Special instructions to the DOM 
+
+          1. Attribute Directives 
+              examples: routerLink, routerLinkActive, 
+
+          2. Structural Directives (20 mins)
+              Make impact in the structure (html) of the component. 
+
+              *ngIf, *ngFor, ngSwitch 
+          
+      </pre>
+
+      <div class="alert alert-success" *ngIf='isLoggedIn'>
+        Logged In
+      </div>
+
+      <div class="alert alert-danger" *ngIf='!isLoggedIn'>
+        Not authenticated. pls login
+      </div>
+      <!-- todo: work with else in *ngIf -->
+
+      <ul>
+        <li *ngFor='let skill of skillsList'>{{skill}}</li>
+      </ul>
+
+      <!-- todo: find index in the above for loop -->
+
+      <!-- todo: work with ngSwitch -->
+
+      <h5>Custom Attribute Directive - colorizer</h5>
+      <div appColorizer>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+
+      
     </div>
 
   </div>

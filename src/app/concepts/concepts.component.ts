@@ -20,14 +20,18 @@ export class ConceptsComponent implements OnInit {
 
   // property binding related
   clientName = 'Citibank';
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   // two way binding related
   courseName = 'Angular';
 
   myAge = 16;
 
+  // custom event binding related
   dataFromChild;
+
+  // directives related
+  skillsList: string[] = [ 'html', 'css', 'js', 'ng'];
 
   constructor() { }
 
