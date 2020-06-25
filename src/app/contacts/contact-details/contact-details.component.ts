@@ -32,7 +32,7 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   updateContactHandler(formData){
-    console.log(formData);
+    console.log(formData); // use this to further validate the form
     console.log(this.duplicateContactData );
 
   }
