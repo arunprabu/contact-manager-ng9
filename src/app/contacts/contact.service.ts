@@ -24,19 +24,25 @@ export class ContactService {
       }));
   }
 
- 
-  
-
-  getContacts(){  // 1. get the req from comp ts 
+  getContacts(){  // 1. get the req from comp ts
     console.log('inside getContacts');
 
     // 2. send the req to the rest api 
-    // 2.1 identify the rest api end point and method - GET 
+    // 2.1 identify the rest api end point and method - GET
     // 2.2 use HttpClient to hit the rest api endpoint
     return this.http.get(this.REST_API_URL)
       .pipe( map((res: any) => {   // 3. get the resp from REST API
         console.log(res);
         return res.data; // 4. send the resp back to the component
+      }));
+  }
+
+  getContactById(id) { 
+    const CONTACT_DETAILS_REST_API_URL = this.REST_API_URL + '/' + id;
+    return this.http.get(CONTACT_DETAILS_REST_API_URL)
+      .pipe( map((res: any) => {
+        console.log(res);
+        return res.data;
       }));
   }
 

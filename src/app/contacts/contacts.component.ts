@@ -24,11 +24,10 @@ export class ContactsComponent implements OnInit {
     // 1.1 connect to the service -using dep inj - refer constructor
     // 1.2. hit the service's method
     this.contactService.getContacts()
-      .subscribe( (res: any) => {
+      .subscribe( (res: any) => { // 2. get the res from the service
         console.log(res);
         this.contactList = res;
       });
-    // 2. get the res from the service
   }
 
 }

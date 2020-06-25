@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../contact.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact-details',
@@ -8,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  constructor() { }
+  contactData: any;
+  duplicateContactData: any;
+
+  constructor( private contactService: ContactService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // read url param in angular
+    const contactId = this.activatedRoute.snapshot.paramMap.get('id');
+
+    this.contactService.getContactById(contactId)
+      .subscribe( (res: any) => {
+        console.log(res);
+        this.contactData = res;
+      });
+  }
+
+  openEditModalHandler(){
+    // changing data immutably
+    this.duplicateContactData = JSON.parse(JSON.stringify(this.contactData));
+  }
+
+  updateContactHandler(formData){
+    console.log(formData);
+    console.log(this.duplicateContactData );
+
   }
 
 }
