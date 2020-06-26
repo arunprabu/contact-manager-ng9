@@ -26,21 +26,20 @@ export class AddContactComponent implements OnInit {
     });
   }
 
-  addContactHandler(){
+  async addContactHandler(){
     console.log('submitted');
     console.log(this.contactForm.value);
 
     // 1. send the above data to service
       // 1.1 connect to the service -- using dep inj -- refer constructor
       // 1.2 send the data to the service's method
-    this.contactService.createContact(this.contactForm.value)
-      .subscribe( (res: any) => {     // 2. receive the resp from service
-        console.log(res);
+    let response = await this.contactService.createContact(this.contactForm.value);
 
-        if (res && res.id) {
-          this.isSaved = true;
-        }
-      });
+    console.log(response);
+
+    if (response && response.id ){
+      this.isSaved = true;
+    }
   }
 
 

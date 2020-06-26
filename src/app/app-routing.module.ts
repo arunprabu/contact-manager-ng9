@@ -11,9 +11,13 @@ import { ContactDetailsComponent } from './contacts/contact-details/contact-deta
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'concepts', component: ConceptsComponent },
-  { path: 'contacts', component: ContactsComponent },
-  { path: 'contacts/add', component: AddContactComponent },
-  { path: 'contacts/:id', component: ContactDetailsComponent }
+  {
+    path: 'contacts', children: [
+      { path: '', component: ContactsComponent },
+      { path: 'add', component: AddContactComponent },
+      { path: ':id', component: ContactDetailsComponent }
+    ]
+  }
 ];
 
 @NgModule({
