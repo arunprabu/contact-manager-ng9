@@ -16,6 +16,7 @@ import { CebComponent } from './concepts/ceb/ceb.component';
 import { ColorizerDirective } from './shared/directives/colorizer.directive';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 // Main Switching Box
 @NgModule({
@@ -31,7 +32,8 @@ import { ContactDetailsComponent } from './contacts/contact-details/contact-deta
     CebComponent,
     ColorizerDirective,
     AddContactComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

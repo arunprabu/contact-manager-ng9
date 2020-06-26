@@ -5,6 +5,7 @@ import { ConceptsComponent } from './concepts/concepts.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AddContactComponent } from './contacts/add-contact/add-contact.component';
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 
 // configure the routes
@@ -17,6 +18,9 @@ const routes: Routes = [
       { path: 'add', component: AddContactComponent },
       { path: ':id', component: ContactDetailsComponent }
     ]
+  },
+  {
+    path: '**', component: PageNotFoundComponent
   }
 ];
 
